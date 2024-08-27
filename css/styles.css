@@ -23,8 +23,8 @@ ul {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 24px;
-  padding: 100px 156px;
+  gap: 24px 24px;
+  padding: 24px 156px;
   background: #fff;
 }
 
