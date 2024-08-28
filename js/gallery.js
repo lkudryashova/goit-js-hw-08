@@ -85,25 +85,17 @@ const createGalleryCardsArray = images
 
 galleryList.innerHTML = createGalleryCardsArray;
 
-const galleryLinks = document.querySelectorAll('.gallery-link');
-galleryLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-  });
-});
-
-const picturesGallery = document.querySelector('.gallery');
-
-picturesGallery.addEventListener('click', function (event) {
+galleryList.addEventListener('click', function (event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-  console.log(openModal());
+  event.preventDefault();
+  openModal(event.target.dataset.source);
 });
 
 function openModal(imageSrc) {
   const instance = basicLightbox.create(`
-        <img src="${event.target.dataset.source}" width="1112" height="640">
+        <img src="${imageSrc}" width="1112" height="640">
     `);
   instance.show();
 }
